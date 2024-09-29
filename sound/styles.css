@@ -1,0 +1,117 @@
+body {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+}
+
+.button a {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding: 15px 30px;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 2px 2px 0px #000;
+  filter: dropshadow(color=#000, offx=2px, offy=2px);
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  transition: all 0.1s ease;
+}
+
+.leaderboard-button a {
+  background-color: #ffa12b;
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+}
+
+.sound-button a {
+  background-color: #8a2be2; /* Violet color */
+  -webkit-box-shadow: inset 0 1px 0 #c29ffa, 0 10px 0 #4b0082;
+  -moz-box-shadow: inset 0 1px 0 #c29ffa, 0 10px 0 #4b0082;
+  box-shadow: inset 0 1px 0 #c29ffa, 0 10px 0 #4b0082;
+}
+
+.button a:active {
+  top: 10px;
+}
+
+.leaderboard-button a:active {
+  background-color: #f78900;
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+}
+
+.sound-button a:active {
+  background-color: #7b1fa2;
+  -webkit-box-shadow: inset 0 1px 0 #c29ffa, inset 0 -3px 0 #4b0082;
+  -moz-box-shadow: inset 0 1px 0 #c29ffa, inset 0 -3px 0 #4b0082;
+  box-shadow: inset 0 1px 0 #c29ffa, inset 0 -3px 0 #4b0082;
+}
+
+.button:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  position: absolute;
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
+  background-color: #2b1800;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.button-icon,
+.sound-icon {
+  font-size: 18px;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Animation for the trophy icon */
+@keyframes trophy-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.leaderboard-button:hover .button-icon {
+  animation: trophy-bounce 0.6s ease infinite;
+}
+
+/* Pixelated effect for the buttons */
+.button a {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
